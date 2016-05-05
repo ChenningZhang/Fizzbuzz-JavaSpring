@@ -14,14 +14,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.chenningzhang.fizzbuzz.model.Fizzbuzz;
 
 /**
- * Handles requests for the application home page.
+ * Handles requests for the application.
+ * @param word(required): One of "fizz", "buzz", or "fizzbuzz"
+ * @param max_value(required): An Integer greater than 0.
+ * URI: /api
+ * Example URL: /api?word=fizz&max_value=30
+ * HTTP status: 400 if required param is missing or invalid; 200 otherwise.
  */
 @Controller
 public class HomeController {
-		
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
+
 	@ResponseBody
 	@RequestMapping(value = "/api", method = RequestMethod.GET)
 	public ResponseEntity<Fizzbuzz> fizzbuzz(@RequestParam(required=false, defaultValue="") String word, @RequestParam(required=false, defaultValue="0") String max_value) throws Exception {
