@@ -37,3 +37,5 @@
 0:0:0:0:0:0:0:1 - - [04/May/2016:22:17:36 -0700] "GET /api?word=fizz&max_value= HTTP/1.1" 400 42 http-bio-8080-exec-2 8
 0:0:0:0:0:0:0:1 - - [04/May/2016:22:17:49 -0700] "GET /api?word=fizz&max_value=-10 HTTP/1.1" 400 42 http-bio-8080-exec-9 3
 0:0:0:0:0:0:0:1 - - [04/May/2016:22:17:59 -0700] "GET /api?word=fizz&max_value=10.5 HTTP/1.1" 400 42 http-bio-8080-exec-3 7
+0:0:0:0:0:0:0:1 - - [04/May/2016:22:44:28 -0700] "GET /api?word=fizz&max_valuebuzz HTTP/1.1" 400 42 http-bio-8080-exec-1 60
+0:0:0:0:0:0:0:1 - - [04/May/2016:22:44:40 -0700] "GET /api?word=fizz&max_value=buzz HTTP/1.1" 400 42 http-bio-8080-exec-4 11
