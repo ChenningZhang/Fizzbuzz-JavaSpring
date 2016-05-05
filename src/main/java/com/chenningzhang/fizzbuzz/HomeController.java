@@ -30,7 +30,7 @@ public class HomeController {
 		Fizzbuzz result = new Fizzbuzz();
 		List<Integer> lst = new ArrayList<Integer>();
 		try {
-			if((!word.equals("fizz") && !word.equals("buzz") && !word.equals("fizzbuzz")) || Integer.valueOf(max_value) <= 0 || Integer.valueOf(max_value) == Integer.valueOf(max_value)) {
+			if((!word.equals("fizz") && !word.equals("buzz") && !word.equals("fizzbuzz")) || Integer.valueOf(max_value) <= 0 || Integer.valueOf(max_value) != (int)Integer.valueOf(max_value)) {
 				result.setStatus("error");
 				result.setNumbers(lst);
 				return new ResponseEntity<Fizzbuzz>(result, HttpStatus.BAD_REQUEST);
