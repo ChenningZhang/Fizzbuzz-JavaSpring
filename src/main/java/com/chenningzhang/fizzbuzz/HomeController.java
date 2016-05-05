@@ -29,7 +29,13 @@ public class HomeController {
 	public ResponseEntity<Fizzbuzz> fizzbuzz(@RequestParam(required=false, defaultValue="") String word, @RequestParam(required=false, defaultValue="0") String max_value) throws Exception {
 		Fizzbuzz result = new Fizzbuzz();
 		List<Integer> lst = new ArrayList<Integer>();
-		if((!word.equals("fizz") && !word.equals("buzz") && !word.equals("fizzbuzz")) || Integer.valueOf(max_value) <= 0) {
+		try {
+			if((!word.equals("fizz") && !word.equals("buzz") && !word.equals("fizzbuzz")) || Integer.valueOf(max_value) <= 0 || Integer.valueOf(max_value) == Integer.valueOf(max_value)) {
+				result.setStatus("error");
+				result.setNumbers(lst);
+				return new ResponseEntity<Fizzbuzz>(result, HttpStatus.BAD_REQUEST);
+			}
+		} catch (NumberFormatException e) {
 			result.setStatus("error");
 			result.setNumbers(lst);
 			return new ResponseEntity<Fizzbuzz>(result, HttpStatus.BAD_REQUEST);
